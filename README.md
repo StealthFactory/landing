@@ -25,7 +25,7 @@ Add these Cloudflare DNS records, initially set to **DNS only** with automatic T
 
 After GitHub Pages shows the certificate as ready, enable **Enforce HTTPS** in the repository's Pages settings. Set Cloudflare SSL/TLS to **Full (strict)** and switch these records to **Proxied**. Cloudflare's proxy is required for the max download Worker's path routes.
 
-The landing repository serves the website. The max distribution Worker handles only `/max/download*` and `/max/appcast.xml*`, using its private R2 bucket. Deploy that Worker from the max source checkout after the proxied DNS records exist. The root `/` continues to use GitHub Pages. This page does not add a separate `/max` marketing page.
+The landing repository serves the website. The max distribution Worker handles only `/max/download*` and `/max/appcast.xml*`, using its private R2 bucket. Deploy that Worker from the max source checkout after the proxied DNS records exist. The root `/` continues to use GitHub Pages. The Max product page lives at `/max/`, with its recorded feature demos under `max/media/`.
 
 [GitHub Pages custom domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 

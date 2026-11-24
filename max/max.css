@@ -1,0 +1,90 @@
+@font-face {
+  font-family: Inter;
+  src: url("media/inter.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #181923;
+  --muted: #565a68;
+  --border: #dedee7;
+  --surface: #f6f6fa;
+  --accent: #a82843;
+  --accent-hover: #831e34;
+  --dark: #202130;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 100%;
+  line-height: 1.55;
+  color: var(--ink);
+  background: #fff;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(100% - clamp(2rem, 8vw, 9rem), 76rem); margin-inline: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+a { color: inherit; text-underline-offset: .22em; }
+a:focus-visible, video:focus-visible { outline: 3px solid #7737a5; outline-offset: 4px; }
+
+.masthead, footer {
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.masthead { border-bottom: 1px solid var(--border); }
+.brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font-size: 1.5rem; font-weight: 780; letter-spacing: -.07em; }
+.brand img { object-fit: contain; }
+nav { display: flex; gap: clamp(.8rem, 3vw, 2.2rem); align-items: center; }
+nav a { text-decoration: none; font-size: .95rem; }
+nav a:hover, footer a:hover { text-decoration: underline; }
+.nav-download { color: var(--accent); font-weight: 650; }
+
+.hero { padding-block: clamp(3.5rem, 8vw, 7.8rem) 0; }
+.hero-copy { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); align-items: end; gap: clamp(2rem, 5vw, 4rem); margin-bottom: clamp(2rem, 4.5vw, 3.8rem); }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.02; font-weight: 400; letter-spacing: -.055em; text-wrap: balance; }
+h1 { font-size: clamp(3.65rem, 6.3vw, 6.65rem); max-width: 12ch; }
+h2 { font-size: clamp(2.8rem, 5vw, 4.6rem); }
+.hero p, .download p, article p { color: var(--muted); }
+.hero-copy > div > p:first-child { font-size: clamp(1.05rem, 1.7vw, 1.25rem); margin-bottom: 1.3rem; max-width: 28ch; }
+.button { display: inline-flex; min-height: 3.1rem; padding: .7rem 1.22rem; align-items: center; justify-content: center; border-radius: .5rem; background: var(--accent); color: #fff; font-weight: 650; text-decoration: none; }
+.button:hover { background: var(--accent-hover); }
+.requirements { padding-top: .65rem; font-size: .86rem; }
+.hero-media { background: var(--surface); border: 1px solid var(--border); padding: clamp(.55rem, 2.3vw, 1.75rem); border-radius: 1rem; }
+video { display: block; width: 100%; height: auto; background: #eeeef3; border: 1px solid var(--border); border-radius: .75rem; }
+.hero-media video { box-shadow: 0 .6rem 1.8rem #2526431a; }
+figcaption { color: var(--muted); margin: 1rem .2rem 0; font-size: .95rem; }
+
+.features { padding-block: clamp(4.25rem, 9vw, 8rem); scroll-margin-top: 2rem; }
+.demo-grid { margin-top: clamp(2rem, 5vw, 4rem); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem clamp(1rem, 3.3vw, 3.5rem); }
+article { display: grid; align-content: start; gap: .65rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+article h3 { font-weight: 670; letter-spacing: -.03em; font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.2; }
+article p { max-width: 50ch; margin-bottom: .5rem; min-height: 3.1em; }
+article video { align-self: end; }
+
+.privacy { background: var(--dark); color: #fff; padding-block: clamp(3rem, 7vw, 6.5rem); }
+.privacy-inner { display: grid; grid-template-columns: minmax(0, .76fr) minmax(0, 1.24fr); gap: clamp(1.8rem, 5vw, 5rem); align-items: center; }
+.privacy p { color: #e1e1eb; max-width: 38ch; margin-top: .9rem; }
+.privacy h2 { margin-bottom: 1.15rem; }
+.privacy video { border-color: #595b70; }
+.privacy :focus-visible { outline-color: #f3c7ff; }
+.download { padding-block: clamp(3rem, 6vw, 5rem); display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
+.download p { margin-top: .75rem; }
+footer { border-top: 1px solid var(--border); font-size: .9rem; }
+footer a { text-decoration: none; }
+@media (max-width: 48rem) {
+  .hero-copy, .privacy-inner, .demo-grid { grid-template-columns: 1fr; }
+  article p { min-height: 0; }
+  .demo-grid { gap: 2.7rem; }
+}
+@media (max-width: 33rem) {
+  .masthead { min-height: 4.5rem; }
+  .brand img { width: 34px; height: 34px; }
+  h1 { font-size: clamp(2.6rem, 11vw, 3.7rem); }
+  nav a { font-size: .85rem; }
+  .download { display: grid; justify-content: start; }
+}
